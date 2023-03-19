@@ -22,11 +22,14 @@
                     <input 
                         type="text" 
                         class="form-control"
+                        [formControl]="nuevoFavorito"
                         placeholder="Agregar Favorito"
+                        (keyup.enter)="agregarFavorito()"
                     >
                     <button 
                         type="button"    
                         class="btn btn-outline-primary"
+                        (click)="agregarFavorito()"
                     >
                         Agregar
                     </button>
@@ -47,6 +50,7 @@
                 <button 
                     type="button"
                     class="btn btn-outline-danger"
+                    (click)="borrar(i)"
                 >
                     Eliminar
                 </button>
@@ -67,7 +71,14 @@
 
 <span>Valid</span>
 <pre>{{ miFormulario.valid }}</pre>
+<br>
 
 <span>Value</span>
 <pre>{{ miFormulario.value | json }}</pre>
+<br>
+
+<span>Agregar Juego</span>
+<pre>{{ nuevoFavorito.valid }}</pre>
+<br>
+<pre>{{ nuevoFavorito.value }}</pre>
 
